@@ -85,4 +85,73 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-export { registerUser };
+const generateAccessAndRefreshToken = async (userId) => {
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      throw new ApiError(404, "User not found");
+    }
+
+    const AccessToken = user.generateAccessToken();
+    const RefreshToken = user.generateRefreshToken();
+
+    user.refreshToken = RefreshToken;
+    await user.save({ validateBeforeSave: false });
+
+    return { AccessToken, RefreshToken };
+  } catch (error) {
+    console.error("Error generating tokens:", error);
+    throw new ApiError(500, "Token generation failed");
+  }
+};
+
+const loginUser = asyncHandler(async (req, res) => {
+  const { username, email, password } = req.body;
+
+  //validate email or username
+  if (!username && !email) {
+    throw new ApiError(400, "Username or email is required");
+  }
+
+  //grab user from db
+  const user = await User.findOne({
+    $or: [{ username: username?.toLowerCase() }, { email }],
+  });
+  if (!user) {
+    throw new ApiError(404, "User not found");
+  }
+
+  //check user password from db
+  const PasswordValid = await user.isPasswordcorrect(password);
+  if (!PasswordValid) {
+    throw new ApiError(401, "Invalid credentials");
+  }
+
+  //generate tokens after validation
+  const { AccessToken, RefreshToken } = await generateAccessAndRefreshToken(
+    user._id
+  );
+
+  //grab user from db after token generation to avoid sending password and refresh token
+  const loggedInUser = await User.findById(user._id).select(
+    "-password -refreshToken"
+  );
+  if (!loggedInUser) {
+    throw new ApiError(500, "Login failed");
+  }
+
+  //cookie options
+  const options = {
+    httpOnly: true, //cookie cannot be accessed by client side js
+    secure: process.env.NODE_ENV === "production", //if production then true else false
+  };
+
+  //send response
+  return res
+    .status(200)
+    .cookie("accessToken", AccessToken, options)
+    .cookie("refreshToken", RefreshToken, options)
+    .json(new ApiResponse(200, "User logged in successfully", loggedInUser));
+});
+
+export { registerUser, loginUser };
