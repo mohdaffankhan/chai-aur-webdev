@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { registerUser, loginUser } from "../controllers/user.controllers.js";
+import { registerUser, loginUser, logoutUser, refreshAccessToken } from "../controllers/user.controllers.js";
 import { upload } from "../middlewares/multer.middlewares.mjs";
+import { authMiddleware } from "../middlewares/auth.middlewares.js";
 
 const router = Router();
 
@@ -14,5 +15,10 @@ router.route("/register").post(
 );
 
 router.route("/login").post(loginUser);
+router.route("/refresh-token").post(refreshAccessToken);
+
+// Protected routes (require authentication)
+// we need to add the authMiddleware before executing the controllers, to check if the user is authenticated
+router.route("/logout").post(authMiddleware, logoutUser);
 
 export default router;
