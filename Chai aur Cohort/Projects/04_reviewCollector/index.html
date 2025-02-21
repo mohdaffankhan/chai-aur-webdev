@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Collector</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="main-title">Review Collector</h1>
+      <p class="subtitle">Share your feedback & ratings</p>
+    </header>
+    
+    <div class="container">
+      <div class="card review-form-section">
+        <h2>Write a Review</h2>
+        <form id="reviewForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label for="review">Review</label>
+            <textarea id="review" required placeholder="Write your review here.."></textarea>
+          </div>
+          <button class="submitBtn" type="submit">
+            <img width="20" height="20" src="https://img.icons8.com/forma-thin/50/enter-2.png" alt="enter-2"/> Submit Review
+          </button>
+        </form>
+      </div>
+      <div class="card reviews-section">
+        <h2>Recent Reviews</h2>
+        <div id="reviewsList"></div>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
