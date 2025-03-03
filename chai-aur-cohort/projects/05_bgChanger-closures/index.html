@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .input {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .createbtn{
+            margin-left: 5px;
+            padding: 4px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn{
+            margin: 5px;
+            padding: 4px 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bg Changer</h2>
+        <div class="input">
+            <input
+            type="color"
+            list="colors"
+            id="colorInput"
+            >
+            <button id="createBtn" class="createbtn">Create Button</button>
+        </div>
+        <div id="btn-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
