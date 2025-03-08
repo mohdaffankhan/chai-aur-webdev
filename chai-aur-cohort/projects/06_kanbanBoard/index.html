@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>Kanban Board</h1>
+    <div class="container" id="container">
+        <!-- <div class="board" data-board-id="0" >
+            <h2>Todo</h2>
+            <button class="addTask">Add Task</button>
+            <button class="deleteBoard">Delete Board</button>
+            <div class="tasks" ondragover="event.preventDefault()"></div>
+            </div>
+        </div>
+        <div class="board" data-board-id="1">
+            <h2>In Progress</h2>
+            <button class="addTask">Add Task</button>
+            <button class="deleteBoard">Delete Board</button>
+            <div class="tasks" ondragover="event.preventDefault()"></div>
+        </div>
+        <div class="board" data-board-id="2">
+            <h2>Done</h2>
+            <button class="addTask">Add Task</button>
+            <button class="deleteBoard">Delete Board</button>
+            <div class="tasks" ondragover="event.preventDefault()"></div>
+        </div> -->
+    </div>
+
+    <button class="addBoard">Add Board</button>
+    <div class="deleteElement" ondragover="event.preventDefault()">Delete&nbsp; <i class="fa fa-trash-o"></i></div>
+
+    <!-- Task Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Task</h2>
+            <input type="text" id="taskTitle" placeholder="Task Title">
+            <input type="text" id="taskDesc" placeholder="Description">
+            <input type="text" id="author" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="date" id="dueDate" min="">
+            <label for="difficulty">Choose task difficulty: </label>
+            <select name="difficulty" id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button>Add</button>
+        </div>
+    </div>
+
+    <!-- Board Modal -->
+    <div id="boardModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Board</h2>
+            <p><strong>Difficulty:</strong> <span id="detailDifficulty"></span></p>
+            <input type="text" id="boardTitle" placeholder="Board Title">
+            <button>Add Board</button>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="taskDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeDetailsModal">&times;</span>
+            <h2>Task Details</h2>
+            <p><strong>Title:</strong> <span id="detailTitle"></span></p>
+            <p><strong>Description:</strong> <span id="detailDesc"></span></p>
+            <p><strong>Listed By:</strong> <span id="detailAuthor"></span></p>
+            <p><strong>Email:</strong> <span id="detailEmail"></span></p>
+            <p><strong>Listed On:</strong> <span id="detailDate"></span></p>
+            <p><strong>Complete By:</strong> <span id="detailCompleteDate"></span></p>
+           </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

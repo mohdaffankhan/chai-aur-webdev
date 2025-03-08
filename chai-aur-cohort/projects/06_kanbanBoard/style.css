@@ -1,0 +1,244 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #403f3f;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-align: center;
+}   
+
+/* Board */
+.board {
+    border: 2px solid #000000;
+    height: 80vh;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffffff, #e8e8e8);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.board:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.board h2 {
+    align-self: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.boardButtons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.addTask {
+    border: 1px solid #000000;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #e1e1e1, #78ff6c);
+}
+
+.deleteBoard {
+    border: 1px solid #000000;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #e1e1e1, #ff6c6c);
+}
+
+/* Tasks */
+.tasks {
+    margin-top: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Task Content */
+.taskContent {
+    border: 1px solid #000000;
+    padding: 15px 12px;
+    margin-top: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.taskContent p {
+    margin-bottom: 8px;
+    color: #666666;
+}
+.taskContent:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.taskContent .stats {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    color: #777;
+}
+
+.taskContent .difficulty {
+    margin-top: 8px ;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content {
+    background: #ffffff;
+    color: #000;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 400px;
+    margin: 10% auto;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#detailDesc{
+    word-wrap: break-word;
+}
+
+/* Form Elements */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.name-fields {
+    display: flex;
+    gap: 12px;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Button Styling */
+.difficulty{
+    color: #000;
+}
+
+/* Add Board Button */
+.addBoard {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2196F3;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.addBoard:hover {
+    background: #1976D2;
+}
+
+/* Delete Area */
+.deleteElement {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #F44336;
+    color: white;
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Scrollbar Styling */
+.tasks::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tasks::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.tasks::-webkit-scrollbar-track {
+    background: transparent;
+}
