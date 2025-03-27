@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaiTube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- 📌 Header Section -->
+    <header class="header">
+        <div class="header-left">
+            <!-- Sidebar Toggle Button -->
+            <img src="assets/menu-icon.png" alt="Menu" class="menu-icon" onclick="toggleSidebar()">
+            
+            <!-- Logo and Branding -->
+            <div class="home">
+                <img src="assets/chai-icon.png" alt="ChaiTube Logo" class="youtube-logo">
+                ChaiTube
+            </div>
+        </div>
+
+        <!-- 🔍 Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button class="search-button" type="submit">
+                <img src="assets/search-icon.png" alt="Search">
+            </button>
+        </div>
+
+        <!-- 🔔 Notifications & User Profile -->
+        <div class="header-right">
+            <img src="assets/bell-icon.png" alt="Notifications">
+            <img src="assets/channel.jpg" alt="User" class="user-icon">
+        </div>
+    </header>
+
+    <!-- 📂 Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li>
+                <img src="assets/home-icon.png" alt="Home">
+                <span>Home</span>
+            </li>
+            <li>
+                <img src="assets/trending-icon.png" alt="Trending">
+                <span>Trending</span>
+            </li>
+            <li>
+                <img src="assets/subscriptions-icon.png" alt="Subscriptions">
+                <span>Subscriptions</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 📺 Main Content Section -->
+    <main class="main-content">
+        <div class="video-grid">
+            <!-- Videos will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- 📜 External JavaScript File -->
+    <script src="script.js"></script>
+  
+</body>
+</html>
