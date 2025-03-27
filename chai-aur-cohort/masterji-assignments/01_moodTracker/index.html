@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Mood Logger Section -->
+        <div class="logger">
+            <h2>How are you feeling today?</h2>
+            <div class="mood-buttons">
+                <!-- Mood Selection Buttons -->
+                <button class="mood-btn" data-mood="Happy">😃 Happy</button>
+                <button class="mood-btn" data-mood="Neutral">😐 Neutral</button>
+                <button class="mood-btn" data-mood="Sad">😢 Sad</button>
+                <button class="mood-btn" data-mood="Excited">🤩 Excited</button>
+                <button class="mood-btn" data-mood="Angry">😠 Angry</button>
+            </div>
+            <!-- Log Mood Button -->
+            <button class="submit">Log Mood</button>
+        </div>
+
+        <!-- Mood Statistics Section -->
+        <div class="stats">
+            <!-- Mood Trend Chart -->
+            <div id="trend">
+                <canvas id="moodChart"></canvas>
+            </div>
+
+            <!-- Mood Calendar -->
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

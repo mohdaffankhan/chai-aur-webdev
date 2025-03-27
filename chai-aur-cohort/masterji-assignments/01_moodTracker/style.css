@@ -1,0 +1,168 @@
+/* Root styles */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --accent-color: #FFD700;
+    --background-color: #F5F7FA;
+    --text-color: #333;
+    --border-radius: 10px;
+    --padding: 16px;
+    --shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: var(--padding);
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Logger Section */
+.logger {
+    background: var(--secondary-color);
+    padding: 24px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.logger h2 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+/* Mood selection */
+.mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 15px;
+}
+
+/* Mood buttons */
+.mood-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+}
+
+.mood-btn:hover {
+    background: #357ABD;
+    transform: translateY(-2px);
+}
+
+.mood-btn.selected {
+    background: var(--accent-color);
+    color: black;
+    font-weight: bold;
+}
+
+/* Submit button */
+.submit {
+    background: #003bc4;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    margin-top: 10px;
+}
+
+.submit:hover {
+    background: #002a8f;
+    transform: scale(1.05);
+}
+
+/* Statistics Section */
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Chart Styling */
+#trend {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+/* Calendar Styling */
+#calendar {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    box-shadow: var(--shadow);
+}
+
+/* Calendar Cells */
+.fc-daygrid-day {
+    min-height: 35px;
+    font-size: 13px;
+    padding: 4px;
+}
+
+/* Calendar Headers */
+.fc-col-header-cell {
+    font-size: 14px;
+    padding: 6px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #calendar {
+        max-width: 100%;
+    }
+
+    .logger {
+        max-width: 100%;
+    }
+}
