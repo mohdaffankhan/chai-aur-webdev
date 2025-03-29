@@ -1,0 +1,206 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #28a745;
+    --bg-color: #f1f1f1;
+    --card-bg: #fff;
+    --text-color: #333;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin: 5px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* View Toggle Button */
+#view-toggle {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#view-toggle:hover {
+    background-color: #218838;
+}
+
+/* Sort Button */
+#sort {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#sort:hover {
+    background-color: #0056b3;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Book Container (Default Grid View) */
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Book Card */
+.book-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-card img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.book-card p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* List View Styles */
+.book-container.list-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-container.list-view .book-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    padding: 15px;
+    text-align: left;
+}
+
+.book-container.list-view .book-card img {
+    width: 80px;
+    height: 120px;
+    margin-right: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .book-card {
+        width: 90%;
+    }
+
+    .book-container.list-view .book-card {
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .book-container.list-view .book-card img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+#search-input {
+    width: 60%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+#search-input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.3);
+}
+
+/* Search Button */
+#search-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Center Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

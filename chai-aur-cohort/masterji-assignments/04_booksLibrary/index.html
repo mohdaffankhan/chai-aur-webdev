@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search books...">
+        <button id="search-btn">Search</button> <!-- Search Button -->
+    </div>    
+    
+    <button id="view-toggle">Switch to List View</button> <!-- View Toggle Button -->
+    <button id="sort">Sort</button> <!-- Sort Button -->
+    
+    <div class="book-container"></div> <!-- Book Container -->
+
+    <div class="pagination"> <!-- Pagination -->
+        <button id="prev-btn" disabled>Prev</button>
+        <span id="page-number">Page 1</span>
+        <button id="next-btn">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
